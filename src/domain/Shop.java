@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-
+// tekst
 public class Shop {
 
     private ArrayList<String> productTitles;
