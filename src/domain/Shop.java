@@ -16,6 +16,7 @@ public class Shop {
         productTypes = new ArrayList<String>();
         productIds = new ArrayList<String>();
     }
+//random shit
 
     public double getPrice(int productidx, int days) {
         double price = 0;
