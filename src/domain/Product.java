@@ -1,6 +1,6 @@
 package domain;
 
-public class Product {
+public abstract class Product {
     private String title;
     private String type;
     private String id;
