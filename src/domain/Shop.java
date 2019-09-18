@@ -1,8 +1,9 @@
+package domain;
 
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
-
+import domain.*;
 
 public class Shop {
 	
