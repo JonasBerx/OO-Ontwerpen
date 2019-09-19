@@ -1,12 +1,13 @@
 package ui;
 
+import domain.DomainException;
 import domain.Shop;
 
 import javax.swing.*;
 
 public class Appeke {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws DomainException {
         Shop shop = new Shop();
 
         String menu = "1. Add product\n2. Show product\n3. Show rental price\n\n0. Quit";
