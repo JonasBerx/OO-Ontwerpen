@@ -30,7 +30,7 @@ public class Shop {
 
 
 
-    public void addProduct(Shop shop) throws Exception {
+    public void addProduct(Shop shop) throws DomainException {
         String title = JOptionPane.showInputDialog("Enter the title:");
         String id = JOptionPane.showInputDialog("Enter the id:");
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
@@ -42,7 +42,7 @@ public class Shop {
             product = new Game(title, id);
         } else {
             // TODO: Panic
-            throw new Exception("AAAAAAAh");
+            throw new DomainException("Fucking Normies REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         }
 
         shop.products.add(product);
