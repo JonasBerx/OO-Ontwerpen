@@ -6,7 +6,7 @@ import domain.Shop;
 import javax.swing.*;
 
 public class Appeke {
-    Shop shop = new Shop();
+    static Shop shop = new Shop();
 
     public static void main(String[] args) throws DomainException {
 
@@ -36,6 +36,6 @@ public class Appeke {
         String title = JOptionPane.showInputDialog("Enter the title:");
         String id = JOptionPane.showInputDialog("Enter the id:");
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
-        addProduct(title, id, type);
+        shop.addProduct(title, id, type);
     }
 }
