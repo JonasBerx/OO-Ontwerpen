@@ -26,9 +26,9 @@ public class Appeke {
                 if (choice == 1) {
                     addProductUi();
                 } else if (choice == 2) {
-                    shop.showProduct();
+                    showProductUi();
                 } else if (choice == 3) {
-                    shop.showPrice();
+                    showPriceUi();
                 }
             }
         } catch (DomainException e) {
@@ -43,4 +43,21 @@ public class Appeke {
         String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
         shop.addProduct(title, id, type);
     }
+
+    private static void showProductUi() throws DomainException {
+        String id = JOptionPane.showInputDialog("Enter the id:");
+        if (shop.getProduct(id) != null) {
+            JOptionPane.showMessageDialog(null, shop.getProduct(id).getTitle());
+        }
+    }
+
+    private static void showPriceUi() throws DomainException {
+        String id = JOptionPane.showInputDialog("Enter the id:");
+        if (shop.getProduct(id) != null) {
+            String daysString = JOptionPane.showInputDialog("Enter the number of days:");
+            int days = Integer.parseInt(daysString);
+            JOptionPane.showMessageDialog(null, shop.getPrice(shop.getProduct(id), days));
+        }
+    }
+
 }

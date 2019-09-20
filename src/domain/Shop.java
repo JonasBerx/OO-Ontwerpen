@@ -41,8 +41,7 @@ public class Shop {
         this.products.add(product);
     }
 
-    private Product getProduct() {
-        String id = JOptionPane.showInputDialog("Enter the id:");
+    public Product getProduct(String id) {
         int idx = -1;
         boolean found = false;
         for (int i = 0; i < this.products.size() && !found; i++)
@@ -61,16 +60,8 @@ public class Shop {
         }
     }
 
-    public void showProduct() {
-        Product product = this.getProduct();
-        if(product != null)
-        {
-            JOptionPane.showMessageDialog(null, product.getTitle());
-        }
-    }
-
-    public void showPrice() {
-        Product product = this.getProduct();
+    public void showPrice(String id) {
+        Product product = this.getProduct(id);
         if(product != null)
         {
             String daysString = JOptionPane.showInputDialog("Enter the number of days:");
