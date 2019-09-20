@@ -1,8 +1,7 @@
 package domain;
 
+import javax.swing.*;
 import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
 
 // tekst
 public class Shop {
@@ -29,12 +28,7 @@ public class Shop {
     }
 
 
-
-    public void addProduct(Shop shop) throws DomainException {
-        String title = JOptionPane.showInputDialog("Enter the title:");
-        String id = JOptionPane.showInputDialog("Enter the id:");
-        String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
-
+    public void addProduct(String title, String id, String type) throws DomainException {
         Product product = null;
         if (type.equals("M")) {
             product = new Movie(title, id);
@@ -44,17 +38,16 @@ public class Shop {
             // TODO: Panic
             throw new DomainException("Fucking Normies REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         }
-
-        shop.products.add(product);
+        this.products.add(product);
     }
 
-    private Product getProduct(Shop shop) {
+    private Product getProduct() {
         String id = JOptionPane.showInputDialog("Enter the id:");
         int idx = -1;
         boolean found = false;
-        for(int i = 0; i < shop.products.size() && !found; i++)
+        for (int i = 0; i < this.products.size() && !found; i++)
         {
-            if(shop.products.get(i).getId().equals(id))
+            if (this.products.get(i).getId().equals(id))
             {
                 idx = i;
                 found = true;
@@ -62,27 +55,27 @@ public class Shop {
         }
 
         if (found) {
-            return shop.products.get(idx);
+            return this.products.get(idx);
         } else {
             return null;
         }
     }
 
-    public void showProduct(Shop shop) {
-        Product product = shop.getProduct(shop);
+    public void showProduct() {
+        Product product = this.getProduct();
         if(product != null)
         {
             JOptionPane.showMessageDialog(null, product.getTitle());
         }
     }
 
-    public void showPrice(Shop shop){
-        Product product = shop.getProduct(shop);
+    public void showPrice() {
+        Product product = this.getProduct();
         if(product != null)
         {
             String daysString = JOptionPane.showInputDialog("Enter the number of days:");
             int days = Integer.parseInt(daysString);
-            JOptionPane.showMessageDialog(null, shop.getPrice(product, days));
+            JOptionPane.showMessageDialog(null, this.getPrice(product, days));
         }
     }
 }
