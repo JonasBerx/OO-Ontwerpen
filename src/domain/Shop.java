@@ -23,6 +23,8 @@ public class Shop {
             }
         } else if(product instanceof Game){
             price = days * 3;
+        } else if (product instanceof Cd) {
+            price = days * 1.5;
         }
         return price;
     }
@@ -34,6 +36,8 @@ public class Shop {
             product = new Movie(title, id);
         } else if (type.equals("G")) {
             product = new Game(title, id);
+        } else if (type.equals("C")) {
+            product = new Cd(title, id);
         } else {
             // TODO: Panic
             throw new DomainException("Fucking Normies REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");

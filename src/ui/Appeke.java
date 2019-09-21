@@ -40,7 +40,7 @@ public class Appeke {
     private static void addProductUi() throws DomainException {
         String title = JOptionPane.showInputDialog("Enter the title:");
         String id = JOptionPane.showInputDialog("Enter the id:");
-        String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game):");
+        String type = JOptionPane.showInputDialog("Enter the type (M for movie/G for game/C for cd):");
         shop.addProduct(title, id, type);
     }
 
