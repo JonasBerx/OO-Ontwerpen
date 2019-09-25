@@ -31,6 +31,7 @@ public class Appeke {
                     showPriceUi();
                 }
             }
+            //products naar txt
         } catch (DomainException e) {
             System.out.println(e.getMessage());
         }
